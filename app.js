@@ -4,6 +4,7 @@ import { prisma } from './lib/prisma.js'
 import session from "express-session";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
+import { router } from "./routes/auth.js";
  
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,7 +25,8 @@ app.use(passport.session());
 
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => res.send("Hello, world!"));
+app.get("/", (req, res) => res.render("index"));
+app.use("/auth", router)
 
 const PORT = process.env.PORT || 4401;
 app.listen(PORT, (error) => {
