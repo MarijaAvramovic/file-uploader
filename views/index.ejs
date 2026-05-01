@@ -14,7 +14,10 @@
     <div class="nav-links">
       <a href="/">Home</a>
       <% if (currentUser) { %>
+
+         <a href="/auth/log-out">Dashboard</a>
         <a href="/auth/log-out">Logout</a>
+         
       <% } else { %>
         <a href="/auth/signup">Sing up</a>
       <% } %>
@@ -29,17 +32,20 @@
     <% if (currentUser) { %>
 
       <h2 class="welcome">
-        WELCOME BACK <%= currentUser.username %>
+        WELCOME <%= currentUser.username %>
       </h2>
 
-      <!-- FILE UPLOADER -->
-      <div class="form-group">
-        <label for="file">Upload File</label>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-          <input id="file" name="file" type="file" />
-          <button type="submit">Upload</button>
-        </form>
-      </div>
+     <div class="card description">
+   
+      
+<h4>list of folders</h4>
+      <ul>
+        <li>⚡ Fast file uploads</li>
+        <li>🔒 Secure authentication</li>
+        <li>☁️ Cloud-ready storage</li>
+        <li>📱 Mobile friendly</li>
+      </ul>
+    </div>
 
     <% } else { %>
 
