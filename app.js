@@ -5,6 +5,8 @@ import session from "express-session";
 
 import passport from "./config/passport.js";
 import  router  from "./routes/auth.js";
+
+import { PrismaSessionStore } from "@quixo3/prisma-session-store";
  
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,9 +20,19 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use(session({
-  secret: "cats",
+  secret: "ilove",
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+
+  store: new PrismaSessionStore(prisma, {
+      dbRecordIdIsSessionId: true,
+      checkPeriod: 2 * 60 * 1000, // cleanup expired sessions every 2 min
+    }),
+
+    cookie: {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
+    },
 }));
 
 app.use(passport.initialize());

@@ -4,8 +4,7 @@ In this project, I’ll be building a personal storage service.
 Assignment
 Set up a new project using Express and Prisma. Install all the necessary dependencies including Passport etc.
 Set up session based authentication using Passport.js.
-
--fix ejs style add link to dashboard 
+ 
 
  Use the Prisma session store library to persist sessions in the database.
 Add a form where authenticated users can upload a file. Save the file in your filesystem for now. You’ll need to integrate the multer middleware. We’ll upload these files once we have all other features working.

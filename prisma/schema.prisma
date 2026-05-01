@@ -18,6 +18,19 @@ model User {
   username String  @unique
   name  String?
   password String
+
+    sessions  Session[]
+
 } 
 
- 
+ model Session {
+  id        String   @id @default(cuid())
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
+
+  userId    Int?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([expiresAt])
+}
