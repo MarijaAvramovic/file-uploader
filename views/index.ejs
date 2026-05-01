@@ -3,24 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
+  <link rel="stylesheet" href="/css/home.css">
 </head>
+
 <body>
-  <h1>hello world!</h1>
-  <% if (currentUser) { %>
-  <h1>WELCOME BACK <%= currentUser.username %></h1>
-  <a href="/auth/log-out">LOG OUT</a>
-<% } else { %>
-  <h1>please log in</h1>
-  <form action="/auth/log-in" method="POST">
-    <label for="username">Username</label>
-    <input id="username" name="username" type="text" />
-    
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" />
-    
-    <button type="submit">Log In</button>
-  </form>
-<% } %>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">File Uploader App</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <% if (currentUser) { %>
+        <a href="/auth/log-out">Logout</a>
+      <% } else { %>
+        <a href="/auth/signup">Sing up</a>
+      <% } %>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <h1>Organize your files</h1>
+
+    <% if (currentUser) { %>
+
+      <h2 class="welcome">
+        WELCOME BACK <%= currentUser.username %>
+      </h2>
+
+      <!-- FILE UPLOADER -->
+      <div class="form-group">
+        <label for="file">Upload File</label>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <input id="file" name="file" type="file" />
+          <button type="submit">Upload</button>
+        </form>
+      </div>
+
+    <% } else { %>
+
+      <h2 class="welcome">Please log in</h2>
+
+      <form action="/auth/log-in" method="POST">
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="Enter username" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter password" />
+        </div>
+
+        <button type="submit">Log In</button>
+      </form>
+
+    <% } %>
+
+  </div>
 
 </body>
 </html>

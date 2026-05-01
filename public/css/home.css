@@ -1,0 +1,118 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e5e7eb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  font-weight: bold;
+  color: #60a5fa;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #cbd5e1;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* MAIN CARD */
+.container {
+  margin-top: 100px;
+  background: rgba(15, 23, 42, 0.8);
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Titles */
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.welcome {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #93c5fd;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  color: #94a3b8;
+}
+
+/* Inputs */
+input {
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #020617;
+  color: #e5e7eb;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #3b82f6;
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin-top: 0.8rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
