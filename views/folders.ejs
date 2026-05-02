@@ -37,7 +37,31 @@
 
   <h2 class="upload-title">Folders</h2>
 
- 
+ <ul>
+  <% folders.forEach(folder => { %>
+
+    <li>
+      <a href="/folders/<%= folder.id %>">
+        <%= folder.name %>
+      </a>
+
+      <a href="/folders/<%= folder.id %>/edit">
+        Edit
+      </a>
+
+      <form
+        action="/folders/<%= folder.id %>/delete"
+        method="POST"
+        style="display:inline;"
+      >
+        <button type="submit">
+          Delete
+        </button>
+      </form>
+    </li>
+
+  <% }) %>
+</ul>
 
 </div>
 
