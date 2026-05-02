@@ -11,4 +11,9 @@ export async function getFolders(req, res) {
     folders,
   });
 }
+export function newFolderGet(req, res) {
+   
+
+  res.render("foldersCreateNew");
+}
  

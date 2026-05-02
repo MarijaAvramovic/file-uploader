@@ -19,6 +19,7 @@ router.get("/upload-file", (req, res, next) => {
 
 
 router.get("/view-folders", folderController.getFolders);
+router.get("/view-folders/create", folderController.newFolderGet);
 
 
 router.get("/view-files", (req, res, next) => {

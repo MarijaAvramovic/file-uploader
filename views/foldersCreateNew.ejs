@@ -35,23 +35,17 @@
 
      <div class="card description">
 
-<a href="/action/view-folders/create"><h2 class="upload-title">Create New</h2></a>  
+  <h2 class="upload-title">Create New</h2>
 
- <ul>
-  <% folders.forEach(folder => { %>
-
-    <li>
-      <a href="/folders/<%= folder.id %>">
-        <%= folder.name %>
-      </a>
-
-     
-
-      
-    </li>
-
-  <% }) %>
-</ul>
+ <form action="view-folders/create" method="POST" id="folderForm" style="display:none; margin-top:10px;">
+  <input 
+    type="text" 
+    name="name" 
+    placeholder="Folder name" 
+    required 
+  />
+  <button type="submit">Create</button>
+</form>
 
 </div>
 
