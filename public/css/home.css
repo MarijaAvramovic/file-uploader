@@ -58,6 +58,17 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
+.container a {
+  margin-left: 1rem;
+ 
+  color: #cbd5e1;
+  transition: 0.2s;
+}
+
+.container a:hover {
+  color: #fff;
+}
+
 /* Titles */
 h1 {
   text-align: center;
