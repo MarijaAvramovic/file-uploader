@@ -27,24 +27,19 @@
   <!-- MAIN CONTAINER -->
   <div class="container">
 
-    <h1>Organize your files</h1>
+    <h1>Upload files</h1>
 
     <% if (currentUser) { %>
 
-      <h2 class="welcome">
-        WELCOME <%= currentUser.username %>
-      </h2>
+      
 
      <div class="card description">
-   
 
-      <ul>
-       <a href="/action/upload-file"><li>⚡ Upload files</li></a>  
-       <a href="/action/view-folders"><li>🔒 Folders</li></a>  
-         <a href="/action/view-files"><li>☁️ Files</li></a>  
-       
-      </ul>
-    </div>
+  <h2 class="upload-title">Folders</h2>
+
+ 
+
+</div>
 
     <% } else { %>
 

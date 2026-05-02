@@ -5,6 +5,7 @@ import session from "express-session";
 
 import passport from "./config/passport.js";
 import  router  from "./routes/auth.js";
+import  actionRouter from "./routes/router.js"
 
 import { PrismaSessionStore } from "@quixo3/prisma-session-store";
  
@@ -46,6 +47,7 @@ app.use((req, res, next) => {
 
 app.get("/", (req, res) => res.render("index"));
 app.use("/auth", router)
+app.use("/action", actionRouter)
 
 const PORT = process.env.PORT || 4401;
 app.listen(PORT, (error) => {
