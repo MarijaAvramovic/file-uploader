@@ -12,3 +12,13 @@ export async function uploadFile(req, res) {
   });
 
 };
+
+
+export async function uploadFilePost(req, res) {
+  
+
+  res.render("files", {
+    
+  });
+
+};

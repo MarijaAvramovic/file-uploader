@@ -14,6 +14,8 @@ const router = Router();
 
 router.get("/upload-file", fileController.uploadFile
 );
+router.post("/upload-file", fileController.uploadFilePost
+);
 
 
 router.get("/view-folders", folderController.getFolders);
