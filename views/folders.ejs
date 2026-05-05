@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Home</title>
   <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -26,31 +27,34 @@
   <!-- MAIN CONTAINER -->
   <div class="container">
 
-    <h1> Folders</h1>
+    
+      <div class="folder-header">
+ 
+ <h1> Folders</h1>
+    <a href="/action/view-folders/create" class="folder-card create-inline">
+  <i class="fa-solid fa-plus"></i>
+    </a>
+  </div>
 
     <% if (currentUser) { %>
 
       
 
-     <div class="card description">
+   <div class="card description">
 
-<a href="/action/view-folders/create"><h2 class="upload-title">Create New</h2></a>  
+  <!-- HEADER ROW -->
+ 
 
- <ul>
-  <% folders.forEach(folder => { %>
-
-    <li>
-      <a href="/folders/<%= folder.id %>">
-        <%= folder.name %>
+  <!-- GRID (folders only) -->
+  <div class="folder-grid">
+    <% folders.forEach(folder => { %>
+      <a href="/folders/<%= folder.id %>" class="folder-card">
+        <span><%= folder.name %></span>
       </a>
+    <% }) %>
+  </div>
 
-     
-
-      
-    </li>
-
-  <% }) %>
-</ul>
+</div>
 
 </div>
 

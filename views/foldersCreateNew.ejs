@@ -15,7 +15,8 @@
       <a href="/">Home</a>
       <% if (currentUser) { %>
 
-         <a href="/auth/log-out">Dashboard</a>
+       
+           <a href="/action/view-folders">🔒 Folders</a>  
         <a href="/auth/log-out">Logout</a>
          
       <% } else { %>
@@ -27,15 +28,15 @@
   <!-- MAIN CONTAINER -->
   <div class="container">
 
-    <h1> Folders</h1>
-
+    
+<h2 class="upload-title">Create New</h2>
     <% if (currentUser) { %>
 
       
 
      <div class="card description">
 
-  <h2 class="upload-title">Create New</h2>
+   
 
  <form action="view-folders/create" method="POST" id="folderForm" style="display:none; margin-top:10px;">
   <input 
