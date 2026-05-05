@@ -7,6 +7,8 @@ Set up session based authentication using Passport.js.
  Use the Prisma session store library to persist sessions in the database.
 
 -project routes view controler multer next step
+forma za folder i post reroute na view folders
+- on click take to single folder page show all files 
 
 Add a form where authenticated users can upload a file. Save the file in your filesystem for now. You’ll need to integrate the multer middleware. We’ll upload these files once we have all other features working.
 Add folders. Users should be able to CRUD folders and upload files in them. Set up routes and necessary database interactions for this.

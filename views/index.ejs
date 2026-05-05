@@ -15,7 +15,7 @@
       <a href="/">Home</a>
       <% if (currentUser) { %>
 
-         <a href="/auth/log-out">Dashboard</a>
+          
         <a href="/auth/log-out">Logout</a>
          
       <% } else { %>
@@ -27,17 +27,17 @@
   <!-- MAIN CONTAINER -->
   <div class="container">
 
-    <h1>Organize your files</h1>
+    
 
     <% if (currentUser) { %>
 
       <h2 class="welcome">
-        WELCOME <%= currentUser.username %>
+        WELCOME <%= currentUser.name.toUpperCase(); %>
       </h2>
 
      <div class="card description">
    
-
+ <h3>Organize your files</h3>
       <ul>
        <a href="/action/upload-file"><li>⚡ Upload files</li></a>  
        <a href="/action/view-folders"><li>🔒 Folders</li></a>  

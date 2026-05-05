@@ -1,6 +1,7 @@
   import express from "express";
  import { Router } from "express";
  import * as folderController from "../controllers/folderController.js";
+ import * as fileController from "../controllers/fileController.js"
 
   
   
@@ -11,11 +12,8 @@ const router = Router();
 
  
 
-router.get("/upload-file", (req, res, next) => {
-  res.render("uploadFile", {
-    folders: []
-  });
-});
+router.get("/upload-file", fileController.uploadFile
+);
 
 
 router.get("/view-folders", folderController.getFolders);
