@@ -281,3 +281,73 @@ button:hover {
     font-size: 0.9rem;
   }
 }
+
+/* FORM LAYOUT */
+.folder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* INPUT WITH ICON */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+
+  background: rgba(2, 6, 23, 0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: 0.2s;
+}
+
+/* ICON */
+.input-wrapper i {
+  color: #60a5fa;
+  font-size: 1rem;
+}
+
+/* INPUT */
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+/* FOCUS EFFECT */
+.input-wrapper:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.submit-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* CLICK */
+.submit-btn:active {
+  transform: scale(0.97);
+}

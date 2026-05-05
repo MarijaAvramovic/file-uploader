@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Home</title>
   <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
@@ -29,26 +30,32 @@
   <div class="container">
 
     
-<h2 class="upload-title">Create New</h2>
+<h2 class="upload-title">Create New Folder</h2>
     <% if (currentUser) { %>
 
+       <div class="card description">
+
+    <form action="/action/view-folders/create" method="POST" class="folder-form">
+
+      <div class="input-wrapper">
+        <i class="fa-solid fa-folder-plus"></i>
+        <input 
+          type="text" 
+          name="name" 
+          placeholder="Enter folder name..." 
+          required 
+        />
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Create Folder
+      </button>
+
+    </form>
+
+  </div>
+
       
-
-     <div class="card description">
-
-   
-
- <form action="view-folders/create" method="POST" id="folderForm" style="display:none; margin-top:10px;">
-  <input 
-    type="text" 
-    name="name" 
-    placeholder="Folder name" 
-    required 
-  />
-  <button type="submit">Create</button>
-</form>
-
-</div>
 
     <% } else { %>
 
