@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= folder.name %></title>
+
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">File Uploader App</div>
+
+  <div class="nav-links">
+    <a href="/">Home</a>
+
+    <% if (currentUser) { %>
+      <a href="/action/view-folders">🔒 Folders</a>
+      <a href="/auth/log-out">Logout</a>
+    <% } else { %>
+      <a href="/auth/signup">Sign up</a>
+    <% } %>
+
+  </div>
+</nav>
+
+<!-- CONTAINER -->
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="folder-header-single">
+
+    <h1><%= folder.name %></h1>
+
+    <!-- DELETE ONLY -->
+    <button class="icon-btn delete"
+      onclick="handleDelete(<%= folder.id %>)">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+
+  </div>
+
+  <!-- INFO -->
+  <div class="description">
+
+   
+
+    <!-- EMPTY STATE -->
+    <% if (folder.files.length === 0) { %>
+
+      <div class="empty-state">
+        
+        <p>No files in this folder</p>
+      </div>
+
+    <% } else { %>
+
+      <!-- FILE LIST -->
+      <div class="file-grid">
+
+        <% folder.files.forEach(file => { %>
+
+          <a href="/files/<%= file.id %>" class="file-card">
+
+            <div class="file-info">
+              <i class="fa-solid fa-file"></i>
+              <span><%= file.filename %></span>
+            </div>
+
+          </a>
+
+        <% }) %>
+
+      </div>
+
+    <% } %>
+
+  </div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+  function handleDelete(id) {
+    if (!confirm("Delete this folder?")) return;
+
+    fetch(`/action/delete-folder/${id}`, {
+      method: "POST"
+    }).then(() => {
+      window.location.href = "/action/view-folders";
+    });
+  }
+</script>
+
+</body>
+</html>

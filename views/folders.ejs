@@ -48,7 +48,7 @@
   <!-- GRID (folders only) -->
   <div class="folder-grid">
     <% folders.forEach(folder => { %>
-      <a href="/folders/<%= folder.id %>" class="folder-card">
+      <a href="/action/view-folders/<%= folder.id %>" class="folder-card">
         <span><%= folder.name %></span>
       </a>
     <% }) %>
