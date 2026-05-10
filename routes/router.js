@@ -17,9 +17,12 @@ router.get("/upload-file", fileController.uploadFile
 router.post("/upload-file", fileController.uploadFilePost
 );
 
+router.post("/delete-folder/:id", folderController.deleteFolder
+);
+router.get("/view-folders/create", folderController.newFolderGet);
 router.get("/view-folders/:id", folderController.getFolderById);
 router.get("/view-folders", folderController.getFolders);
-router.get("/view-folders/create", folderController.newFolderGet);
+ 
  
 router.post("/view-folders/create", folderController.newFolderPost);
 

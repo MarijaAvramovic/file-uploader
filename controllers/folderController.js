@@ -83,3 +83,23 @@ try {
     res.send("Error loading folder");
   }
 }
+
+ 
+export async function deleteFolder(req, res) {
+  try {
+    const folderId = parseInt(req.params.id);
+
+    
+    await prisma.folder.deleteMany({
+      where: {
+        id: folderId,
+        userId: req.user.id,
+      },
+    });
+
+    res.redirect("/action/view-folders");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error deleting folder");
+  }
+}
